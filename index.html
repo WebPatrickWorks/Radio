@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Minha Rádio Online</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #1c1f26, #2d3748);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    button {
+      background-color: #4caf50;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎵 The Best AI Radio</h1>
+  <h3>by Patrick 1</h3>
+  <audio id="radioPlayer" src="https://uk4freenew.listen2myradio.com/live.mp3?typeportmount=s1_20170_stream_880113236"></audio>
+
+  <button onclick="togglePlay()">▶️ Tocar Rádio</button>
+
+  <script>
+    const audio = document.getElementById('radioPlayer');
+    const button = document.querySelector('button');
+
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play();
+        button.textContent = '⏸️ Pausar Rádio';
+      } else {
+        audio.pause();
+        button.textContent = '▶️ Tocar Rádio';
+      }
+    }
+  </script>
+</body>
+</html>
